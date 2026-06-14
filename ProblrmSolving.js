@@ -1,13 +1,6 @@
-function countVowels(str){
-    let count = 0
-    const vo = new Set([
-        'a','e','i','o','u','A','E','I','O','U'])
-    for(let char of str ){
-        if (vo.has(char)){
-            count++
-        }
-    }
-    return count
+function countVowels(str) {
+    const matches = str.match(/[aeiou]/gi);
+    return matches ? matches.length : 0;
 }
 
 console.log(countVowels("hello"));
