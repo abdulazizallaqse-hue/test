@@ -1,13 +1,17 @@
 function countVowels(str){
     let count = 0
-    for(let i = 0; i < str.length; i++ ){
-        let vo = "aioueAIOUE"
-        if(vo.includes(str[i])){
+    const vo = new Set([
+        'a','e','i','o','u','A','E','I','O','U'])
+    for(let char of str ){
+        if (vo.has(char)){
             count++
         }
     }
     return count
 }
-console.log( countVowels("hello"))
-console.log( countVowels("xyz"))
-console.log( countVowels("AaEeIiOoUu"))
+
+console.log(countVowels("hello"));
+console.log(countVowels("HELLO"));
+console.log(countVowels("xyz"));
+console.log(countVowels(""));
+console.log(countVowels("AaEeIiOoUu")); 
